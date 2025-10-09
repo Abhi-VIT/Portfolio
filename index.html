@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhishek Kumar - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="particles.js" defer></script>
 </head>
-<body>
+<body class="loading">
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle theme">
+            <svg class="sun-icon" viewBox="0 0 24 24">
+                <path d="M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.65 0-3 1.35-3 3s1.35 3 3 3 3-1.35 3-3-1.35-3-3-3zm0-2V3M12 21v-4M4.22 19.78l2.83-2.83M19.78 19.78l-2.83-2.83M21 12h-4M3 12h4M19.78 4.22l-2.83 2.83M4.22 4.22l2.83 2.83"/>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+        </button>
+    </div>
     <header>
         <h1>Abhishek Kumar</h1>
         <p>Data Science Student</p>
@@ -110,27 +125,54 @@
         <section id="skills">
             <h2>Skills</h2>
             <ul>
-                <li>Python</li>
-                <li>Tableau</li>
-                <li>Microsoft Office</li>
-                <li>Web Development</li>
-                <li>Git</li>
-                <li>Github</li>
-                <li>MySQL</li>
-                <li>R Programming</li>
-                <li>Analytics</li>
-                <li>Collaborative</li>
-                <li>Implement</li>
-                <li>Statistics</li>
-                <li>Matlab</li>
-                <li>Deep Learning</li>
-                <li>CNN</li>
-                <li>ANN</li>
-                <li>Neo4j</li>
-                <li>MongoDB</li>
-                <li>PowerBI</li>
-                <li>JAVA</li>
-                <li>pytorch</li>
+                <li style="--skill-level: 90%">
+                    <div class="skill-name">Python</div>
+                    <div class="skill-level-text">90%</div>
+                </li>
+                <li style="--skill-level: 85%">
+                    <div class="skill-name">Data Science</div>
+                    <div class="skill-level-text">85%</div>
+                </li>
+                <li style="--skill-level: 85%">
+                    <div class="skill-name">Machine Learning</div>
+                    <div class="skill-level-text">85%</div>
+                </li>
+                <li style="--skill-level: 80%">
+                    <div class="skill-name">Deep Learning</div>
+                    <div class="skill-level-text">80%</div>
+                </li>
+                <li style="--skill-level: 80%">
+                    <div class="skill-name">SQL</div>
+                    <div class="skill-level-text">80%</div>
+                </li>
+                <li style="--skill-level: 75%">
+                    <div class="skill-name">R Programming</div>
+                    <div class="skill-level-text">75%</div>
+                </li>
+                <li style="--skill-level: 85%">
+                    <div class="skill-name">Statistics</div>
+                    <div class="skill-level-text">85%</div>
+                </li>
+                <li style="--skill-level: 70%">
+                    <div class="skill-name">Tableau</div>
+                    <div class="skill-level-text">70%</div>
+                </li>
+                <li style="--skill-level: 75%">
+                    <div class="skill-name">PowerBI</div>
+                    <div class="skill-level-text">75%</div>
+                </li>
+                <li style="--skill-level: 70%">
+                    <div class="skill-name">MongoDB</div>
+                    <div class="skill-level-text">70%</div>
+                </li>
+                <li style="--skill-level: 65%">
+                    <div class="skill-name">Neo4j</div>
+                    <div class="skill-level-text">65%</div>
+                </li>
+                <li style="--skill-level: 80%">
+                    <div class="skill-name">Git & GitHub</div>
+                    <div class="skill-level-text">80%</div>
+                </li>
             </ul>
         </section>
 
