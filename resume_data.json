@@ -1,0 +1,152 @@
+{
+  "full_name": "Abhishek Kumar",
+  "title": "Data Science Professional",
+  "phone": "(+91) 7888873321",
+  "email": "abhishek.k.jalandhar@gmail.com",
+  "photo": "/static/portfolio_app/images/profile.jpg",
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/abhipy/",
+    "github": "https://github.com/Abhi-VIT"
+  },
+  "summary": "Passionate Data Science student with expertise in analytics and predictive model building. Technical proficiency in Python, R, SQL, and machine learning libraries including sci-kit-learn, TensorFlow, PyTorch, and Keras. Experienced in data interpretation and problem-solving with a strong ability to adapt to new environments and work effectively in teams.",
+  "education": [
+    {
+      "school": "Vellore Institute of Technology - AP",
+      "degree": "Masters in Data Science",
+      "start_year": "2024",
+      "end_year": "2026",
+      "details": "CGPA: 8.48, Focus areas: data preprocessing, statistical analysis, machine learning, deep learning",
+      "location": "Amaravati, India"
+    },
+    {
+      "school": "Babasaheb Bhimrao Ambedkar Bihar University",
+      "degree": "Bachelor in Mathematics",
+      "start_year": "2020",
+      "end_year": "2023",
+      "location": "Muzaffarpur, India"
+    }
+  ],
+  "skills": [
+    {"name": "Python", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"},
+    {"name": "R Programming", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rstudio/rstudio-original.svg"},
+    {"name": "SQL", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"},
+    {"name": "Machine Learning", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"},
+    {"name": "Deep Learning", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"},
+    {"name": "TensorFlow", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"},
+    {"name": "PyTorch", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"},
+    {"name": "Tableau", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"},
+    {"name": "PowerBI", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"},
+    {"name": "Git", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"},
+    {"name": "MongoDB", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"},
+    {"name": "Neo4j", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neo4j/neo4j-original.svg"},
+    {"name": "Web Development", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"},
+    {"name": "Statistics", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"},
+    {"name": "Matlab", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg"},
+    {"name": "Java", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"}
+  ],
+  "projects": [
+    {
+      "title": "Graph Net",
+      "description": "Intelligent Knowledge Graph for Data Science Learning. Designed and developed a specialized knowledge graph platform using web crawling techniques, implementing a log-weighted graph network with token system for concept classification.",
+      "year": "2025",
+      "tech": "Web Crawling, Graph Networks, Knowledge Management",
+      "link": "https://github.com/Abhi-VIT/Graph-Net",
+      "animation_logo": "portfolio_app/images/project_logos/graph-network.gif"
+    },
+    {
+      "title": "ARG Data and Modeling",
+      "description": "No-Code Data Science Platform with drag-and-drop modules for data analysis, preprocessing, and model building. Integrated with TensorFlow, PyTorch, Pandas, and NumPy.",
+      "year": "2025",
+      "tech": "Python, TensorFlow, PyTorch, Pandas, NumPy, Matplotlib, Seaborn",
+      "animation_logo": "portfolio_app/images/project_logos/data-modeling.gif"
+    },
+    {
+      "title": "Dynamic R Dataset Analysis and Visualization",
+      "description": "No-Code Statistical Analysis Tool built in R with interactive features for statistical analysis and data visualization.",
+      "year": "2025",
+      "tech": "R, Shiny, Statistical Analysis",
+      "animation_logo": "portfolio_app/images/project_logos/boss.gif"
+    },
+    {
+      "title": "Stock Price Prediction",
+      "description": "Stock price prediction model using Linear regression in machine learning.",
+      "year": "2023",
+      "tech": "Python, Linear Regression, Yahoo Finance, Sklearn",
+      "link": "https://colab.research.google.com/drive/1uUFgjaVV1WcvrtRuEUFCS4r--dzVZRNX?usp=sharing",
+      "animation_logo": "portfolio_app/images/project_logos/stock-price.gif"
+    },
+    {
+      "title": "Stock Analysis and Comparison Tool",
+      "description": "Website for stock price analysis and comparison between two stocks.",
+      "year": "2024",
+      "tech": "Python, BeautifulSoup, yfinance, Streamlit",
+      "link": "https://github.com/Abhi-VIT/Capstone-Project-Stock-Comparision",
+      "animation_logo": "portfolio_app/images/project_logos/stock-analysis.gif"  
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Oracle Cloud Infrastructure 2025 Generative AI Professional",
+      "issuer": "Oracle",
+      "year": "2025",
+      "link": "https://drive.google.com/file/d/1nwFQhCezStl0nRIdPzCZ7RJXir5LWZ-O/view?usp=sharing"
+    },
+    {
+      "title": "German A1, A2",
+      "issuer": "IIT Madras",
+      "year": "2023",
+      "link": "https://drive.google.com/file/d/17GvCCj5JK8k9RcXmkEq8Cu1d_TMgROVi/view?usp=sharing"
+    },
+    {
+      "title": "Python for Advanced Machine Learning",
+      "issuer": "NIT Warangal",
+      "year": "2021",
+      "link": "https://drive.google.com/file/d/18HQrWJO3WdtOMyaA9GZlAs8-KigD12O8/view"
+    },
+    {
+      "title": "AWS Cloud Essentials",
+      "issuer": "AWS",
+      "year": "2025",
+      "link": "https://drive.google.com/file/d/1zo2HdFd6-iUqD8RZMNrCHQikbdtii0cz/view?usp=sharing"
+    },
+    {
+      "title": "Data Analytics and Visualization Job Simulation",
+      "issuer": "Accenture North America",
+      "year": "2021",
+      "link": "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/T6kdcdKSTfg2aotxT/hzmoNKtzvAzXsEqx8_T6kdcdKSTfg2aotxT_RYMGzz2GmbF8dvk74_1741420138142_completion_certificate.pdf"
+    },
+    {
+      "title": "TCS iON Career Edge - Young Professional",
+      "issuer": "Tata Consultancy Services",
+      "year": "2024",
+      "link": "https://drive.google.com/file/d/1qhhzaE7fTk2wl4B2yFatJJWydR6zTMT2/view"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Insurance Agent",
+      "company": "Life Insurance Corporation of India",
+      "location": "Bettiah, India",
+      "start_date": "2023-10-04",
+      "end_date": "Current",
+      "description": "Lead insurance presentations and community building, collaborative reviewing of insurance policies, and presented policies for education and women's benefits."
+    }
+  ],
+  "languages": [
+    {"name": "Hindi", "level": "Native"},
+    {"name": "English", "level": "C2 - Proficient"},
+    {"name": "German", "level": "A2 - Basic"}
+  ],
+  "research": [
+    {
+      "title": "Investigating the Synergistic Effects of Learning Rate, Optimizer, and Activation Function on Convolutional Neural Network Training",
+      "conference": "IEEE 5th International Conference on Artificial Intelligence and Signal Processing",
+      "year": "2025",
+      "abstract": "This research presents a comprehensive analysis of various training techniques for Convolutional Neural Networks (CNNs) in image classification. The study compares different optimization algorithms, learning rate schedules, and data augmentation strategies to identify the most effective combination for improving model accuracy and reducing training time.",
+      "paper_link": "https://ieeexplore.ieee.org/",
+      "code_link": "https://github.com/Abhi-VIT",
+      "impact_factor": "2.8",
+      "technologies": "PyTorch, TensorFlow, OpenCV, NumPy, Scikit-learn"
+    }
+  ]
+}

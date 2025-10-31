@@ -1,0 +1,47 @@
+{% extends "portfolio_app/base.html" %}
+
+{% block title %}About - {{ profile.full_name }}{% endblock %}
+
+{% block content %}
+<section class="about-page card">
+    <div class="about-hero">
+        <div class="about-content text-center">
+            
+            {% if profile.photo %}
+            <div class="about-photo-container">
+                <img src="{{ profile.photo }}" alt="{{ profile.full_name }}" class="about-photo">
+            </div>
+            {% endif %}
+
+            <h1 class="section-title">About Me</h1>
+            <p class="lead">{{ profile.summary }}</p>
+
+            <div class="personal-info">
+                <h2>Contact Information</h2>
+                <ul class="info-list">
+                    <li>
+                        <span class="info-label">Email:</span>
+                        <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+                    </li>
+                    <li>
+                        <span class="info-label">Phone:</span>
+                        <a href="tel:{{ profile.phone }}">{{ profile.phone }}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="social-links">
+                <h2>Professional Profiles</h2>
+                <div class="social-buttons">
+                    <a href="{{ profile.github }}" target="_blank" class="social-btn github">
+                        GitHub Profile
+                    </a>
+                    <a href="{{ profile.linkedin }}" target="_blank" class="social-btn linkedin">
+                        LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

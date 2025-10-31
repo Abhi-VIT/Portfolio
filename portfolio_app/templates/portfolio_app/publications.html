@@ -1,0 +1,234 @@
+{% extends "portfolio_app/base.html" %}
+{% load static %}
+
+{% block title %}Research Publications - {{ profile.full_name }}{% endblock %}
+
+{% block content %}
+<section class="publications-page">
+    <h1>Research Publications</h1>
+
+    <div class="publications-grid">
+        {% for publication in publications %}
+        <article class="publication-card card">
+            <div class="publication-meta">
+                <span class="publication-year">{{ publication.year }}</span>
+                {% if publication.type %}
+                <span class="publication-type">{{ publication.type }}</span>
+                {% endif %}
+            </div>
+
+            <h2 class="publication-title">{{ publication.title }}</h2>
+
+            <div class="authors">
+                {% for author in publication.authors %}
+                <span class="author">{{ author }}</span>
+                {% if not forloop.last %}<span class="author-separator">,</span>{% endif %}
+                {% endfor %}
+            </div>
+
+            {% if publication.venue %}
+            <p class="publication-venue">{{ publication.venue }}</p>
+            {% endif %}
+
+            {% if publication.abstract %}
+            <div class="abstract-container">
+                <button class="abstract-toggle" onclick="toggleAbstract(this)">Show Abstract</button>
+                <div class="abstract-content hidden">
+                    {{ publication.abstract }}
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="publication-links">
+                {% if publication.doi %}
+                <a href="https://doi.org/{{ publication.doi }}" class="publication-link doi" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> DOI
+                </a>
+                {% endif %}
+                
+                {% if publication.pdf_url %}
+                <a href="{{ publication.pdf_url }}" class="publication-link pdf" target="_blank">
+                    <i class="fas fa-file-pdf"></i> PDF
+                </a>
+                {% endif %}
+                
+                {% if publication.code_url %}
+                <a href="{{ publication.code_url }}" class="publication-link code" target="_blank">
+                    <i class="fas fa-code"></i> Code
+                </a>
+                {% endif %}
+            </div>
+        </article>
+        {% empty %}
+        <div class="empty-state card">
+            <p>No publications available at the moment.</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<script>
+function toggleAbstract(button) {
+    const content = button.nextElementSibling;
+    const isHidden = content.classList.contains('hidden');
+    
+    content.classList.toggle('hidden');
+    button.textContent = isHidden ? 'Hide Abstract' : 'Show Abstract';
+}
+</script>
+
+<style>
+/* ---------- Layout ---------- */
+.publications-page {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.publications-page h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 40px;
+}
+
+/* ---------- Grid ---------- */
+.publications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* ---------- Card ---------- */
+.publication-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.publication-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* ---------- Metadata ---------- */
+.publication-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.publication-year {
+    font-weight: 600;
+}
+
+.publication-type {
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+}
+
+/* ---------- Title & Authors ---------- */
+.publication-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 5px 0 8px;
+}
+
+.authors {
+    font-size: 0.95rem;
+    color: #475569;
+    margin-bottom: 6px;
+}
+
+.author-separator {
+    margin: 0 2px;
+}
+
+/* ---------- Venue ---------- */
+.publication-venue {
+    font-style: italic;
+    color: #334155;
+    margin-bottom: 15px;
+}
+
+/* ---------- Abstract ---------- */
+.abstract-container {
+    margin-bottom: 15px;
+}
+
+.abstract-toggle {
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.abstract-toggle:hover {
+    background: #1d4ed8;
+}
+
+.abstract-content {
+    background: #f1f5f9;
+    color: #1e293b;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ---------- Links ---------- */
+.publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.publication-link {
+    text-decoration: none;
+    background: #e2e8f0;
+    color: #1e293b;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+}
+
+.publication-link:hover {
+    background: #cbd5e1;
+}
+
+.publication-link i {
+    margin-right: 5px;
+}
+
+/* ---------- Empty State ---------- */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    background: #f8fafc;
+    border-radius: 14px;
+    color: #64748b;
+    font-size: 1rem;
+}
+</style>
+{% endblock %}

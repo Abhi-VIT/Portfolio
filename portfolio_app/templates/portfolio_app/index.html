@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% if profile %}{{ profile.full_name }}{% else %}Portfolio{% endif %}</title>
+    {% load static %}
+    {% load portfolio_extras %}
+    <link rel="stylesheet" href="{% static 'portfolio_app/css/style.css' %}">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="name">{% if profile %}{{ profile.full_name }}{% else %}Your Name{% endif %}</h1>
+        <p class="title">{% if profile %}{{ profile.title }}{% else %}{% endif %}</p>
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#research">Research</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main">
+      {% if no_data %}
+        <section class="notice">
+          <h2>No resume data loaded</h2>
+          <p>Please run the management command to load your resume JSON or add a Profile via admin.</p>
+        </section>
+      {% else %}
+      <section id="about" class="card">
+        <div class="about-section">
+          {% if profile.photo %}
+          <div class="about-photo-container">
+            <img src="{{ profile.photo }}" alt="{{ profile.full_name }}" class="about-photo">
+          </div>
+          {% endif %}
+          <div class="about-text">
+            <h2>About</h2>
+            <p>{{ profile.summary }}</p>
+            <p>
+              <a href="tel:{{ profile.phone }}">{{ profile.phone }}</a> •
+              <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="card">
+        <h2>Work Experience</h2>
+        <div class="experience-list">
+          {% for exp in experiences %}
+            <article class="experience-item">
+              <header>
+                <h3>{{ exp.title }}</h3>
+                <div class="experience-meta">
+                  <span class="company">{{ exp.company }}</span>
+                  {% if exp.location %}<span class="location">{{ exp.location }}</span>{% endif %}
+                </div>
+                <div class="duration">
+                  {{ exp.start_date|format_date }} — {{ exp.end_date|format_date }}
+                  <span class="duration-calc">{{ exp.start_date|calculate_duration:exp.end_date }}</span>
+                </div>
+              </header>
+              {% if exp.description %}
+                <p class="experience-description">{{ exp.description }}</p>
+              {% endif %}
+            </article>
+          {% empty %}
+            <p>No work experience listed.</p>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- ✅ PROJECTS FIXED BELOW -->
+      <section id="projects" class="card">
+        <h2>Projects</h2>
+        <div class="projects">
+          {% for p in projects %}
+            <article class="project">
+              <div class="project-header">
+                <h3>{{ p.title }}</h3>
+                {% if p.animation_logo %}
+                  <img src="{% static p.animation_logo %}" alt="{{ p.title }} logo" class="project-animation">
+                {% endif %}
+              </div>
+              <p class="muted">{{ p.tech }}</p>
+              <p>{{ p.description }}</p>
+              {% if p.link %}
+                <p><a href="{{ p.link }}" target="_blank">View project</a></p>
+              {% endif %}
+            </article>
+          {% empty %}
+            <p>No projects yet.</p>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- ✅ SKILLS REVERTED TO ORIGINAL -->
+      <section id="skills" class="card">
+        <h2>Skills</h2>
+        <ul class="skills">
+          {% for s in skills %}
+            <li class="skill-item">
+              {% if s.logo %}
+                <img src="{{ s.logo }}" alt="{{ s.name }} logo" class="skill-logo">
+              {% endif %}
+              <span class="skill-name">{{ s.name }}{% if s.level %} — {{ s.level }}{% endif %}</span>
+            </li>
+          {% empty %}
+            <li>No skills listed.</li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section id="education" class="card">
+        <h2>Education</h2>
+        <ul class="education-list">
+          {% for e in educations %}
+            <li>
+              <strong>{{ e.school }}</strong> — {{ e.degree }}
+              <div class="muted">{{ e.start_year }} — {{ e.end_year }}</div>
+              <p>{{ e.details }}</p>
+            </li>
+          {% empty %}
+            <li>No education entries.</li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section id="research" class="card">
+        <h2>Research Publications</h2>
+        <div class="research-list">
+          {% for r in research %}
+            <article class="research-item">
+              <h3>{{ r.title }}</h3>
+              <div class="research-meta">
+                {% if r.conference %}<span class="conference">{{ r.conference }}</span>{% endif %}
+                {% if r.year %}<span class="year">{{ r.year }}</span>{% endif %}
+                {% if r.impact_factor %}<span class="impact">Impact Factor: {{ r.impact_factor }}</span>{% endif %}
+              </div>
+              {% if r.abstract %}
+                <p class="research-abstract">{{ r.abstract }}</p>
+              {% endif %}
+              <div class="research-links">
+                {% if r.paper_link %}
+                  <a href="{{ r.paper_link }}" target="_blank" class="paper-link">View Paper</a>
+                {% endif %}
+                {% if r.code_link %}
+                  <a href="{{ r.code_link }}" target="_blank" class="code-link">View Code</a>
+                {% endif %}
+              </div>
+              {% if r.technologies %}
+                <p class="technologies">Technologies: {{ r.technologies }}</p>
+              {% endif %}
+            </article>
+          {% empty %}
+            <p>No research papers yet.</p>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section id="languages" class="card">
+        <h2>Languages</h2>
+        <div class="language-list">
+          {% for lang in languages %}
+            <div class="language-item">
+              <span class="language-name">{{ lang.name }}</span>
+              <span class="language-level">{{ lang.level }}</span>
+            </div>
+          {% empty %}
+            <p>No languages listed.</p>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section id="certifications" class="card">
+        <h2>Certifications</h2>
+        <ul class="certification-list">
+          {% for c in certifications %}
+            <li>
+              {% if c.link %}
+                <a href="{{ c.link }}" target="_blank" class="cert-link">{{ c.title }}</a>
+              {% else %}
+                {{ c.title }}
+              {% endif %}
+              {% if c.issuer %}<span class="cert-issuer">{{ c.issuer }}</span>{% endif %}
+              {% if c.year %}<span class="cert-year">{{ c.year }}</span>{% endif %}
+            </li>
+          {% empty %}
+            <li>No certifications.</li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section id="contact" class="card contact-card">
+        <h2>Contact</h2>
+        <p>Tap to call or email:</p>
+        <p class="contact-links">
+          <a class="btn" href="tel:{{ profile.phone }}">Call: {{ profile.phone }}</a>
+          <a class="btn" href="mailto:{{ profile.email }}">Email: {{ profile.email }}</a>
+        </p>
+      </section>
+      {% endif %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© {% if profile %}{{ profile.full_name }}{% else %}Portfolio{% endif %} — Built with Django</small>
+      </div>
+    </footer>
+
+    <script src="{% static 'portfolio_app/js/main.js' %}"></script>
+  </body>
+</html>

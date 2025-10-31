@@ -1,0 +1,43 @@
+{% extends "portfolio_app/base.html" %}
+{% load static %}
+
+{% block title %}Projects - {{ profile.full_name }}{% endblock %}
+
+{% block content %}
+<section class="projects-page">
+    <h1>Projects</h1>
+    <div class="projects-grid">
+        {% for p in projects %}
+            <article class="project-card card">
+                <div class="project-header">
+                    <h2>{{ p.title }}</h2>
+                    {% if p.animation_logo %}
+                        <div class="project-logo">
+                            <img src="{% static p.animation_logo %}" alt="{{ p.title }} logo" class="project-animation">
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="project-content">
+                    <p class="project-description">{{ p.description }}</p>
+                    <div class="project-tech">
+                        <h3>Technologies Used:</h3>
+                        <p>{{ p.tech }}</p>
+                    </div>
+                    {% if p.link %}
+                    <div class="project-links">
+                        <a href="{{ p.link }}" target="_blank" class="project-btn">View Project</a>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="project-meta">
+                    <span class="project-year">{{ p.year }}</span>
+                </div>
+            </article>
+        {% empty %}
+            <div class="empty-state card">
+                <p>No projects listed yet.</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "portfolio_app/base.html" %}
+
+{% block title %}Experience - {{ profile.full_name }}{% endblock %}
+
+{% block content %}
+{% load portfolio_extras %}
+<section class="experience-page">
+    <h1>Work Experience</h1>
+    <div class="experience-timeline">
+        {% for exp in experiences %}
+            <article class="experience-card card">
+                <header class="experience-header">
+                    <h2>{{ exp.title }}</h2>
+                    <div class="experience-meta">
+                        <div class="company-info">
+                            <h3>{{ exp.company }}</h3>
+                            {% if exp.location %}<span class="location">{{ exp.location }}</span>{% endif %}
+                        </div>
+                        <div class="duration">
+                            {{ exp.start_date|format_date }} — {{ exp.end_date|format_date }}
+                            <span class="duration-calc">
+                                {{ exp.start_date|calculate_duration:exp.end_date }}
+                            </span>
+                        </div>
+                    </div>
+                </header>
+                {% if exp.description %}
+                    <div class="experience-description">
+                        <p>{{ exp.description }}</p>
+                    </div>
+                {% endif %}
+            </article>
+        {% empty %}
+            <div class="empty-state card">
+                <p>No work experience listed yet.</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

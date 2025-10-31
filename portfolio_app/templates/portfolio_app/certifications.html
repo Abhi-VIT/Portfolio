@@ -1,0 +1,147 @@
+{% extends "portfolio_app/base.html" %}
+{% load static %}
+
+{% block title %}Certifications - {{ profile.full_name }}{% endblock %}
+
+{% block content %}
+<section class="certifications-page">
+    <h1>Professional Certifications</h1>
+
+    <div class="certifications-grid">
+        {% for cert in certifications %}
+        <article class="certification-card card">
+            
+            <div class="cert-header">
+                {% if cert.logo %}
+                    <div class="cert-logo">
+                        <img src="{% static cert.logo %}" alt="{{ cert.title }} logo">
+                    </div>
+                {% endif %}
+                <div class="cert-meta">
+                    <h2 class="cert-title">{{ cert.title }}</h2>
+                    <span class="cert-org">{{ cert.issuer }}</span>
+                    <span class="cert-year">{{ cert.year }}</span>
+                </div>
+            </div>
+
+            {% if cert.link %}
+            <div class="cert-actions">
+                <a href="{{ cert.link }}" target="_blank" class="cert-btn">
+                    <i class="fas fa-external-link-alt"></i> View Certificate
+                </a>
+            </div>
+            {% endif %}
+
+        </article>
+        {% empty %}
+        <div class="empty-state card">
+            <p>No certifications listed yet.</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<style>
+.certifications-page {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.certifications-page h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #2d3748;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.certification-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.cert-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.cert-logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: #f9fafb;
+    padding: 5px;
+}
+
+.cert-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.cert-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.cert-org {
+    font-size: 0.95rem;
+    color: #4a5568;
+}
+
+.cert-year {
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+.cert-actions {
+    margin-top: 10px;
+}
+
+.cert-btn {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.cert-btn:hover {
+    background-color: #1d4ed8;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    background: #f8fafc;
+    border-radius: 14px;
+    color: #64748b;
+    font-size: 1rem;
+}
+</style>
+{% endblock %}

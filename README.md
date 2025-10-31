@@ -1,20 +1,52 @@
-# Portfolio Website for Abhishek Kumar
+# Minimal Django Portfolio
 
-This repository contains the source code for the personal portfolio website of Abhishek Kumar. The website is built with HTML and CSS and is hosted on GitHub Pages.
+This is a minimal, modern, responsive personal portfolio built with Django. It displays content dynamically from models and can import resume data from a JSON file.
 
-## Sections
+Quick start (Windows PowerShell):
 
-The portfolio is organized into the following sections:
-- About Me
-- Work Experience
-- Projects
-- Education
-- Skills
-- Certifications
-- Contact
+1. Create and activate a virtual environment
 
-## Deployment
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
 
-The website is automatically deployed to GitHub Pages whenever changes are pushed to the `main` branch.
+2. Install dependencies
 
-The live website can be accessed at: [https://<your-github-username>.github.io/<repository-name>/](https://<your-github-username>.github.io/<repository-name>/)
+```powershell
+pip install -r requirements.txt
+```
+
+3. Run migrations
+
+```powershell
+python manage.py migrate
+```
+
+4. Load sample resume data (or provide your own `resume_data.json` at the project root)
+
+```powershell
+python manage.py load_resume
+```
+
+5. Create a superuser (optional, to edit via admin)
+
+```powershell
+python manage.py createsuperuser
+```
+
+6. Run the dev server
+
+```powershell
+python manage.py runserver
+```
+
+Then open http://127.0.0.1:8000/ to view the portfolio.
+
+Notes and assumptions:
+- The original PDF resume file was not attached; instead this project provides a JSON import mechanism. Replace fields in `resume_data.json` with contents from your resume, or use the Django admin to enter data.
+- Replace `SECRET_KEY` in `portfolio_project/settings.py` before deploying to production and set `DEBUG=False`.
+
+Next steps (optional):
+- Parse the PDF programmatically and map fields into `resume_data.json`.
+- Add contact form with email sending (requires SMTP configuration).
