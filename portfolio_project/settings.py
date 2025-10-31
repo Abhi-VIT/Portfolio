@@ -4,7 +4,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = '5c0b977199c470ccff1dcb5f2c01abf5'
+SECRET_KEY = 'replace-me-with-a-secure-key-for-production'
 
 DEBUG = True
 
