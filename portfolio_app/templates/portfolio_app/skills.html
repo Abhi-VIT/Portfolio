@@ -5,47 +5,48 @@
 {% block content %}
 <section class="skills-page">
     <h1>Technical Skills</h1>
-    
+
     <div class="skills-categories">
         <div class="skill-category card">
             <h2>Programming & Data Analysis</h2>
             <div class="skills-grid">
                 {% for s in skills %}
-                    {% if s.name in "Python,R Programming,SQL,Java" %}
-                    <article class="skill-detail">
-                        <div class="skill-header">
-                            {% if s.logo %}
-                            <img src="{{ s.logo }}" alt="{{ s.name }} logo" class="skill-logo">
-                            {% endif %}
-                            <h3>{{ s.name }}</h3>
-                            <span class="skill-level">{{ s.level }}</span>
-                        </div>
-                        <div class="skill-description">
-                            {% if s.name == "Python" %}
-                            <p>Primary programming language for data science tasks, including data preprocessing, analysis, and model development. Proficient in key libraries:</p>
-                            <ul>
-                                <li>NumPy & Pandas for data manipulation</li>
-                                <li>Scikit-learn for machine learning</li>
-                                <li>Matplotlib & Seaborn for visualization</li>
-                            </ul>
-                            {% elif s.name == "R Programming" %}
-                            <p>Statistical computing and data visualization, specialized in:</p>
-                            <ul>
-                                <li>Statistical analysis and hypothesis testing</li>
-                                <li>ggplot2 for advanced visualizations</li>
-                                <li>R Markdown for reproducible research</li>
-                            </ul>
-                            {% elif s.name == "SQL" %}
-                            <p>Database management and data querying expertise:</p>
-                            <ul>
-                                <li>Complex queries and data extraction</li>
-                                <li>Database optimization</li>
-                                <li>Data warehousing concepts</li>
-                            </ul>
-                            {% endif %}
-                        </div>
-                    </article>
-                    {% endif %}
+                {% if s.name in "Python,R Programming,SQL,Java" %}
+                <article class="skill-detail">
+                    <div class="skill-header">
+                        {% if s.logo %}
+                        <img src="{{ s.logo }}" alt="{{ s.name }} logo" class="skill-logo">
+                        {% endif %}
+                        <h3>{{ s.name }}</h3>
+                        <span class="skill-level">{{ s.level }}</span>
+                    </div>
+                    <div class="skill-description">
+                        {% if s.name == "Python" %}
+                        <p>Primary programming language for data science tasks, including data preprocessing, analysis,
+                            and model development. Proficient in key libraries:</p>
+                        <ul>
+                            <li>NumPy & Pandas for data manipulation</li>
+                            <li>Scikit-learn for machine learning</li>
+                            <li>Matplotlib & Seaborn for visualization</li>
+                        </ul>
+                        {% elif s.name == "R Programming" %}
+                        <p>Statistical computing and data visualization, specialized in:</p>
+                        <ul>
+                            <li>Statistical analysis and hypothesis testing</li>
+                            <li>ggplot2 for advanced visualizations</li>
+                            <li>R Markdown for reproducible research</li>
+                        </ul>
+                        {% elif s.name == "SQL" %}
+                        <p>Database management and data querying expertise:</p>
+                        <ul>
+                            <li>Complex queries and data extraction</li>
+                            <li>Database optimization</li>
+                            <li>Data warehousing concepts</li>
+                        </ul>
+                        {% endif %}
+                    </div>
+                </article>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
@@ -54,41 +55,41 @@
             <h2>Machine Learning & AI</h2>
             <div class="skills-grid">
                 {% for s in skills %}
-                    {% if s.name in "Machine Learning,Deep Learning,TensorFlow,PyTorch" %}
-                    <article class="skill-detail">
-                        <div class="skill-header">
-                            {% if s.logo %}
-                            <img src="{{ s.logo }}" alt="{{ s.name }} logo" class="skill-logo">
-                            {% endif %}
-                            <h3>{{ s.name }}</h3>
-                            <span class="skill-level">{{ s.level }}</span>
-                        </div>
-                        <div class="skill-description">
-                            {% if s.name == "Machine Learning" %}
-                            <p>Comprehensive understanding of ML algorithms and applications:</p>
-                            <ul>
-                                <li>Supervised and unsupervised learning</li>
-                                <li>Model selection and evaluation</li>
-                                <li>Feature engineering and selection</li>
-                            </ul>
-                            {% elif s.name == "Deep Learning" %}
-                            <p>Neural network architecture design and implementation:</p>
-                            <ul>
-                                <li>Convolutional Neural Networks (CNN)</li>
-                                <li>Recurrent Neural Networks (RNN)</li>
-                                <li>Transfer Learning</li>
-                            </ul>
-                            {% elif s.name == "TensorFlow" or s.name == "PyTorch" %}
-                            <p>Deep learning framework expertise for:</p>
-                            <ul>
-                                <li>Model development and training</li>
-                                <li>Performance optimization</li>
-                                <li>Production deployment</li>
-                            </ul>
-                            {% endif %}
-                        </div>
-                    </article>
-                    {% endif %}
+                {% if s.name in "Machine Learning,Deep Learning,TensorFlow,PyTorch" %}
+                <article class="skill-detail">
+                    <div class="skill-header">
+                        {% if s.logo %}
+                        <img src="{{ s.logo }}" alt="{{ s.name }} logo" class="skill-logo">
+                        {% endif %}
+                        <h3>{{ s.name }}</h3>
+                        <span class="skill-level">{{ s.level }}</span>
+                    </div>
+                    <div class="skill-description">
+                        {% if s.name == "Machine Learning" %}
+                        <p>Comprehensive understanding of ML algorithms and applications:</p>
+                        <ul>
+                            <li>Supervised and unsupervised learning</li>
+                            <li>Model selection and evaluation</li>
+                            <li>Feature engineering and selection</li>
+                        </ul>
+                        {% elif s.name == "Deep Learning" %}
+                        <p>Neural network architecture design and implementation:</p>
+                        <ul>
+                            <li>Convolutional Neural Networks (CNN)</li>
+                            <li>Recurrent Neural Networks (RNN)</li>
+                            <li>Transfer Learning</li>
+                        </ul>
+                        {% elif s.name == "TensorFlow" or s.name == "PyTorch" %}
+                        <p>Deep learning framework expertise for:</p>
+                        <ul>
+                            <li>Model development and training</li>
+                            <li>Performance optimization</li>
+                            <li>Production deployment</li>
+                        </ul>
+                        {% endif %}
+                    </div>
+                </article>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
@@ -97,44 +98,106 @@
             <h2>Data Visualization & Business Intelligence</h2>
             <div class="skills-grid">
                 {% for s in skills %}
-                    {% if s.name in "Tableau,PowerBI,Statistics" %}
-                    <article class="skill-detail">
-                        <div class="skill-header">
-                            {% if s.logo %}
-                            <img src="{{ s.logo }}" alt="{{ s.name }} logo" class="skill-logo">
-                            {% endif %}
-                            <h3>{{ s.name }}</h3>
-                            <span class="skill-level">{{ s.level }}</span>
-                        </div>
-                        <div class="skill-description">
-                            {% if s.name == "Tableau" %}
-                            <p>Data visualization and dashboard creation:</p>
-                            <ul>
-                                <li>Interactive dashboard design</li>
-                                <li>Data story telling</li>
-                                <li>Business reporting</li>
-                            </ul>
-                            {% elif s.name == "PowerBI" %}
-                            <p>Business intelligence and reporting:</p>
-                            <ul>
-                                <li>Data modeling</li>
-                                <li>DAX calculations</li>
-                                <li>Report automation</li>
-                            </ul>
-                            {% elif s.name == "Statistics" %}
-                            <p>Statistical analysis and inference:</p>
-                            <ul>
-                                <li>Hypothesis testing</li>
-                                <li>Regression analysis</li>
-                                <li>Experimental design</li>
-                            </ul>
-                            {% endif %}
-                        </div>
-                    </article>
-                    {% endif %}
+                {% if s.name in "Tableau,PowerBI,Statistics" %}
+                <article class="skill-detail">
+                    <div class="skill-header">
+                        {% if s.logo %}
+                        <img src="{{ s.logo }}" alt="{{ s.name }} logo" class="skill-logo">
+                        {% endif %}
+                        <h3>{{ s.name }}</h3>
+                        <span class="skill-level">{{ s.level }}</span>
+                    </div>
+                    <div class="skill-description">
+                        {% if s.name == "Tableau" %}
+                        <p>Data visualization and dashboard creation:</p>
+                        <ul>
+                            <li>Interactive dashboard design</li>
+                            <li>Data story telling</li>
+                            <li>Business reporting</li>
+                        </ul>
+                        {% elif s.name == "PowerBI" %}
+                        <p>Business intelligence and reporting:</p>
+                        <ul>
+                            <li>Data modeling</li>
+                            <li>DAX calculations</li>
+                            <li>Report automation</li>
+                        </ul>
+                        {% elif s.name == "Statistics" %}
+                        <p>Statistical analysis and inference:</p>
+                        <ul>
+                            <li>Hypothesis testing</li>
+                            <li>Regression analysis</li>
+                            <li>Experimental design</li>
+                        </ul>
+                        {% endif %}
+                    </div>
+                </article>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
     </div>
 </section>
+{% endblock %}-text-white);
+margin-bottom: 2rem;
+display: inline-flex;
+align-items: center;
+gap: 0.6rem;
+}
+
+.cloud-heading i { color: var(--cyan); }
+
+.cloud-badges-wrapper {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 0.85rem;
+}
+
+.eco-badge-item {
+display: inline-flex;
+align-items: center;
+gap: 0.65rem;
+padding: 0.6rem 1.15rem;
+background: rgba(255, 255, 255, 0.04);
+border: 1px solid var(--border-subtle);
+border-radius: var(--radius-full);
+transition: all var(--transition-smooth);
+}
+
+.eco-badge-icon {
+width: 24px;
+height: 24px;
+object-fit: contain;
+}
+
+.eco-badge-name {
+font-size: 0.92rem;
+font-weight: 600;
+color: var(--text-body);
+}
+
+.eco-badge-level {
+font-family: var(--font-mono);
+font-size: 0.7rem;
+color: var(--cyan);
+background: rgba(6, 182, 212, 0.1);
+padding: 0.15rem 0.5rem;
+border-radius: var(--radius-full);
+}
+
+.eco-badge-item:hover {
+background: rgba(255, 255, 255, 0.09);
+border-color: var(--cyan);
+transform: translateY(-3px) scale(1.05);
+box-shadow: 0 8px 24px rgba(6, 182, 212, 0.28);
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 768px) {
+.skills-filter-tabs { border-radius: var(--radius-lg); justify-content: center; }
+.skills-cards-grid { grid-template-columns: 1fr; }
+}
+</style>
 {% endblock %}

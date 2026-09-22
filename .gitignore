@@ -1,16 +1,73 @@
-# Ignore node_modules
+# Python bytecode and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+
+# Secrets and machine-specific configuration (keep safe example files)
+.env
+.env.*
+.env_vercel
+atlas-credentials*.env
+!.env.example
+!.env.sample
+!.env.template
+/.venv.bak/
+local_settings.py
+
+# Django local databases and generated collectstatic output
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+/staticfiles/
+
+# Test, coverage, type-checking and lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+/coverage/
+
+# Python packaging output
+/build/
+/dist/
+*.egg-info/
+.eggs/
+
+# Node dependencies, tooling caches and Vercel local project metadata
 node_modules/
+.npm/
+.cache/
+.vercel/
 
-# Ignore logs
-npm-debug.log
-yarn-debug.log
-yarn-error.log
+# Logs and temporary work files
+*.log
+tmp/
+.tmp/
+*.tmp
+*.swp
+*.swo
+*~
 
-# Ignore editor directories and files
-.idea
-.vscode
+# Editor and operating-system files
+.idea/
+.vscode/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.swp
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Keep source static assets (including GLB models, textures, PDFs and vendored
+# Three.js), Django migrations, resume_data.json and dependency lockfiles tracked.

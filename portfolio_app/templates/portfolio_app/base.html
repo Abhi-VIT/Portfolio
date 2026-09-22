@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{{ profile.full_name }}{% endblock %}</title>
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     {% load static %}
     <!-- Common CSS -->
     <link rel="stylesheet" href="{% static 'portfolio_app/css/base.css' %}">
     <link rel="stylesheet" href="{% static 'portfolio_app/css/style.css' %}">
 
-    
+
     <!-- Page-specific CSS -->
     {% block extra_css %}{% endblock %}
 </head>
+
 <body>
     <header class="site-header">
         <nav class="main-nav">
             <div class="nav-brand">
                 <a href="{% url 'portfolio_app:home' %}">{{ profile.full_name }}</a>
             </div>
-            
+
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
             </button>
-            
+
             <ul class="nav-links" id="navLinks">
                 <li><a href="{% url 'portfolio_app:about' %}" class="nav-link">About</a></li>
                 <li><a href="{% url 'portfolio_app:experience' %}" class="nav-link">Experience</a></li>
@@ -79,10 +81,10 @@
         }
 
         // Add active class to current nav link
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const currentPath = window.location.pathname;
             const navLinks = document.querySelectorAll('.nav-link');
-            
+
             navLinks.forEach(link => {
                 if (link.getAttribute('href') === currentPath) {
                     link.classList.add('active');
@@ -93,4 +95,5 @@
 
     {% block extra_js %}{% endblock %}
 </body>
+
 </html>

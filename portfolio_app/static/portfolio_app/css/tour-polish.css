@@ -1,0 +1,165 @@
+/* Architectural studio treatment for the existing guided portfolio. */
+:root {
+  --ink: #f6f5f0;
+  --muted: #bac6d3;
+  --night: #0b1020;
+  --line: rgba(205, 222, 241, .19);
+}
+
+::selection { color: #10170c; background: var(--acid); }
+:focus-visible { outline: 2px solid var(--acid); outline-offset: 5px; }
+.tour-header {
+  height: 80px;
+  padding-inline: 3.5vw;
+  background: linear-gradient(180deg, rgba(8, 14, 25, .9), rgba(8, 14, 25, .52));
+  border-bottom-color: rgba(216, 198, 159, .2);
+  backdrop-filter: blur(18px);
+}
+.wordmark { font-size: .875rem; letter-spacing: .06em; }
+.wordmark b { font-weight: 400; color: var(--muted); }
+.header-status { font-size: .75rem; letter-spacing: .045em; }
+.sound-button { min-height: 44px; padding-inline: 1rem; font-size: .75rem; }
+.sound-button[aria-pressed="true"] { color: var(--acid); border-color: var(--acid); }
+.scene-vignette {
+  background: linear-gradient(90deg, rgba(6, 11, 23, .9), rgba(6, 11, 23, .4) 37%, transparent 66%),
+    linear-gradient(0deg, rgba(6, 11, 23, .65), transparent 20%, transparent 85%, rgba(6, 11, 23, .2));
+}
+body.presentation-right:not(.is-room-transitioning) .scene-vignette {
+  background: linear-gradient(270deg, rgba(6, 11, 23, .9), rgba(6, 11, 23, .4) 37%, transparent 66%),
+    linear-gradient(0deg, rgba(6, 11, 23, .65), transparent 20%);
+}
+.tour-stop { padding: 160px 9vw 160px 6vw; }
+.welcome-stop { min-height: 125vh; padding-top: max(170px, 22vh); }
+.intro-card { width: min(580px, 46vw); text-shadow: 0 3px 24px #080d19; }
+h1 { font-size: clamp(3rem, 5.7vw, 5.7rem); line-height: 1.02; letter-spacing: -.055em; }
+h1 i, .room-card h2 i { color: #ccf78a; }
+.intro-copy { max-width: 490px; line-height: 1.8; font-size: 1rem; margin-top: 1.6rem; }
+.intro-actions { gap: 1.25rem; flex-wrap: wrap; margin-top: 2rem; }
+.primary-action {
+  border-radius: 999px;
+  min-height: 52px;
+  background: #ccf78a;
+  box-shadow: 0 8px 28px rgba(167, 218, 91, .14);
+  transition: transform .2s, box-shadow .2s;
+}
+.primary-action:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(167, 218, 91, .23); }
+.text-action { font-size: .875rem; min-height: 44px; }
+.intro-meta { font-size: .875rem; gap: 2.5rem; margin-top: 2rem; }
+.intro-meta b { font-size: .75rem; color: #d7bd91; }
+.eyebrow, .room-number { font-size: .75rem; letter-spacing: .09em; line-height: 1.6; }
+.content-stop .room-card { width: min(540px, 43vw); text-shadow: 0 2px 20px #050a14; }
+.content-stop .room-card::before { display: none; }
+.content-stop.align-left .room-card { margin-left: 0; }
+.content-stop.align-right .room-card { margin-right: 1vw; }
+.room-card h2 { font-size: clamp(2.5rem, 4vw, 4.2rem); line-height: 1.03; }
+.room-lede { color: #bac6d3; font-size: 1rem; line-height: 1.75; }
+.entry-kicker, .entry-company { font-size: .875rem; line-height: 1.5; }
+.experience-entry ul { font-size: 1rem; line-height: 1.75; }
+.achievement-strip { margin-top: 1.4rem; border-left-color: #d7bd91; }
+.achievement-strip span { font-size: .75rem; color: #d7bd91; }
+.achievement-strip p { font-size: .875rem; }
+.project-console { border-radius: 16px; overflow: hidden; border-color: #4b5866; box-shadow: 0 24px 65px rgba(0, 0, 0, .3); }
+.computer-screen { padding: 1.4rem; background: #0b1620; }
+.computer-screen::after { opacity: .035; }
+.computer-screen h3 { font-size: clamp(1.5rem, 2vw, 2rem); line-height: 1.2; }
+.computer-screen > p:not(.screen-year) { font-size: 1rem; line-height: 1.65; }
+.screen-status, .screen-year, .screen-tech { font-size: .75rem; line-height: 1.6; }
+.screen-actions { flex-wrap: wrap; }
+.screen-actions a, .screen-actions button { min-height: 44px; border-radius: 6px; font-size: .875rem; }
+.project-selector { grid-template-columns: 1fr; max-height: 220px; overflow: auto; }
+.project-tab { display: grid; grid-template-columns: 24px 1fr auto; align-items: center; gap: .6rem; min-height: 48px; border-right: 0; border-bottom: 1px solid var(--line); padding: .6rem 1rem; }
+.project-tab b { font-size: .875rem; margin: 0; }
+.project-tab em, .project-tab span, .project-count small { font-size: .75rem; }
+.project-tab.is-selected { box-shadow: inset 3px 0 #ccf78a; }
+.skill-pill { font-size: 1rem; padding: .45rem 0; }
+.skill-pill small { font-size: .75rem; }
+.skill-bands p, .coursework, .education-book small { font-size: .875rem; line-height: 1.75; }
+.skill-bands b, .coursework b { font-size: .75rem; }
+.education-book p { font-size: .875rem; }
+.education-book strong { font-size: 1rem; line-height: 1.5; }
+.paper-card h3 { font-size: 1.35rem; line-height: 1.5; }
+.paper-card p { font-size: 1rem; line-height: 1.75; }
+.paper-card > span, .paper-tags span { font-size: .75rem; line-height: 1.5; }
+.paper-actions a { min-height: 44px; font-size: .875rem; display: inline-flex; align-items: center; }
+.credential-marquee { display: grid; gap: .5rem; margin-block: 1.5rem; }
+.credential-marquee span { font-size: .875rem; line-height: 1.6; }
+.credential-marquee span:not(:last-child)::after { content: none; }
+.contact-actions > a { min-height: 48px; font-size: 1rem; transition: color .2s, padding .2s; }
+.contact-actions > a:hover { padding-left: .5rem; }
+.contact-actions .contact-primary { font-size: 1.15rem; color: #ccf78a; }
+.tour-end { font-size: .75rem; line-height: 1.6; gap: 1rem; }
+.guide-bubble { right: 6vw; bottom: 2rem; width: min(420px, 34vw); border-left-color: #d7bd91; padding-left: 1rem; }
+.guide-bubble small { font-size: .75rem; color: #d7bd91; }
+.guide-bubble p { font-size: 1rem; line-height: 1.6; }
+.room-rail { right: 1.5vw; gap: .6rem; }
+.rail-label { font-size: .75rem; }
+.room-dot { font-size: .75rem; min-height: 44px; }
+.room-dot span { width: 36px; height: 36px; }
+.room-dot em { background: rgba(8, 15, 25, .78); padding: .4rem .6rem; border-radius: 5px; }
+.fpp-room { top: 105px; }
+.fpp-room small { font-size: .75rem; }
+.fpp-room strong { font-size: .875rem; }
+.fpp-reticle { opacity: .2; transform: translate(-50%, -50%) scale(.55); }
+.fpp-controls { font-size: .75rem; gap: .8rem; }
+.fpp-controls span { border: 0; background: transparent; backdrop-filter: none; padding: .25rem 0; }
+.scroll-cue { transform: none; bottom: 8rem; font-size: .75rem; letter-spacing: .07em; }
+.project-dialog { border-radius: 20px; border-color: #6b7b68; }
+.project-dialog h2 { line-height: 1.1; padding-right: 2rem; }
+
+@media (max-width: 1000px) {
+  .header-status { display: none; }
+  .fpp-controls { flex-direction: column; gap: .25rem; }
+  .guide-bubble { width: 38vw; right: 5vw; }
+  .content-stop .room-card { width: 49vw; }
+  .intro-card { width: 53vw; }
+}
+@media (max-width: 760px) {
+  .tour-header { height: 70px; padding-inline: 1rem; }
+  .wordmark { font-size: .75rem; gap: .6rem; }
+  .sound-button { padding-inline: .75rem; }
+  .tour-stop { padding: 150px 1.25rem 230px; }
+  .welcome-stop { padding-top: 160px; min-height: 130vh; }
+  .intro-card, .content-stop .room-card { width: 100%; max-width: 540px; }
+  h1 { font-size: clamp(2.6rem, 10vw, 4rem); }
+  .room-card h2 { font-size: clamp(2.4rem, 9vw, 3.5rem); }
+  .content-stop .room-card { margin-top: 0 !important; }
+  .scene-vignette, body.presentation-right:not(.is-room-transitioning) .scene-vignette { background: linear-gradient(90deg, rgba(6, 11, 23, .85), rgba(6, 11, 23, .6)); }
+  .guide-bubble { width: auto; left: 1rem; right: 1rem; bottom: 5.9rem; background: rgba(8, 15, 25, .92); padding: .65rem .85rem; border-radius: 0 10px 10px 0; }
+  .guide-bubble p { font-size: .875rem; }
+  .room-rail { left: .75rem; right: .75rem; bottom: .75rem; border-radius: 999px; padding: .35rem; }
+  .room-dot { min-height: 44px; }
+  .room-dot span { width: 32px; height: 32px; }
+  .fpp-room { top: 90px; left: 1rem; }
+  .fpp-controls, .scroll-cue { display: none; }
+  .intro-actions { flex-direction: row; align-items: center; }
+  .intro-meta { gap: 1.5rem; flex-wrap: wrap; }
+  .contact-actions { grid-template-columns: 1fr 1fr; }
+  .contact-actions .contact-primary { grid-column: 1 / -1; }
+}
+/* Loading feedback stays out of the room navigation and disappears on success. */
+.guide-model-status {
+  position: fixed;
+  z-index: 30;
+  left: 50%;
+  top: 5.5rem;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 2rem);
+  padding: .7rem 1rem;
+  border: 1px solid #c8ff3d55;
+  border-radius: .75rem;
+  background: #101622f2;
+  color: #f5f1e8;
+  font: 500 .8rem/1.5 sans-serif;
+  text-align: center;
+}
+.guide-model-status[hidden], .guide-model-status button[hidden] { display: none; }
+.guide-model-status button {
+  margin-left: .7rem;
+  padding: .35rem .6rem;
+  border: 0;
+  border-radius: .3rem;
+  background: #c8ff3d;
+  color: #101622;
+  cursor: pointer;
+}

@@ -1,52 +1,67 @@
-# Minimal Django Portfolio
+# Abhishek Kumar - Interactive FPP Portfolio
 
-This is a minimal, modern, responsive personal portfolio built with Django. It displays content dynamically from models and can import resume data from a JSON file.
+This Django portfolio presents the resume as a first-person walkthrough. Scroll or use the arrow/WASD controls to move between rooms, drag to look around, and follow the animated 3D presenter through experience, projects, skills, education, research, and contact sections.
 
-Quick start (Windows PowerShell):
+## Launch the website
 
-1. Create and activate a virtual environment
+The project virtual environment is already available at `.venv`. From PowerShell in this folder, run:
 
 ```powershell
-python -m venv .venv
+.\.venv\Scripts\python.exe manage.py migrate
+.\.venv\Scripts\python.exe manage.py runserver
+```
+
+Then open http://127.0.0.1:8000/.
+
+You can also double-click `start_portfolio.bat`, which checks the environment, applies migrations, and starts the server for you.
+
+## Recreate the environment
+
+If `.venv` is removed or the project is copied to another computer, run:
+
+```powershell
+py -3.13 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe manage.py migrate
+.\.venv\Scripts\python.exe manage.py runserver
+```
+
+If PowerShell activation is preferred, use:
+
+```powershell
 .\.venv\Scripts\Activate.ps1
-```
-
-2. Install dependencies
-
-```powershell
-pip install -r requirements.txt
-```
-
-3. Run migrations
-
-```powershell
-python manage.py migrate
-```
-
-4. Load sample resume data (or provide your own `resume_data.json` at the project root)
-
-```powershell
-python manage.py load_resume
-```
-
-5. Create a superuser (optional, to edit via admin)
-
-```powershell
-python manage.py createsuperuser
-```
-
-6. Run the dev server
-
-```powershell
 python manage.py runserver
 ```
 
-Then open http://127.0.0.1:8000/ to view the portfolio.
+## Presenter model
 
-Notes and assumptions:
-- The original PDF resume file was not attached; instead this project provides a JSON import mechanism. Replace fields in `resume_data.json` with contents from your resume, or use the Django admin to enter data.
-- Replace `SECRET_KEY` in `portfolio_project/settings.py` before deploying to production and set `DEBUG=False`.
+The 3D guide uses the supplied `Shadowed Ensemble.glb`, stored locally at
+`portfolio_app/static/portfolio_app/models/shadowed-ensemble.glb`. Its textures
+are embedded; no external model or texture service is needed. Three.js 0.169.0
+and its GLTF loader are vendored under `static/portfolio_app/vendor/three/`
+with the upstream MIT license.
 
-Next steps (optional):
-- Parse the PDF programmatically and map fields into `resume_data.json`.
-- Add contact form with email sending (requires SMTP configuration).
+The supplied GLB has no skeleton or animation clips. `guide-animation.mjs` adds
+a lightweight runtime hip/knee/ankle rig with blended vertex weights. Steps are
+driven by distance traveled, ease to a stop at gates and presentation spots,
+and respect reduced-motion preferences. Shoe-sole sampling keeps the feet at
+floor level. The animated footprint is included in the navigation clearance.
+The guided tour waits for the presenter to arrive before advancing again.
+
+A clothing-only material treatment adds a matte navy suit, white shirt, lapels
+and burgundy tie while preserving the original face, hair and hand textures.
+The source GLB is unchanged. This is a procedural walking rig, not a complete
+motion-captured character; seated poses and articulated hand gestures are not
+implemented. Projects are presented standing beside the workstation.
+
+Checks: `node tests/guide-model.test.mjs`, `node tests/guide-animation.test.mjs`,
+`node tests/guide-navigation.test.mjs`,
+and `.\.venv\Scripts\python.exe manage.py test`.
+
+## Updating resume data
+
+The interactive home page reads directly from `resume_data.json`. The classic database-backed pages can be refreshed with:
+
+```powershell
+.\.venv\Scripts\python.exe manage.py load_resume_data
+```

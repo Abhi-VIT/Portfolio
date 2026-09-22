@@ -1,48 +1,49 @@
 {
   "full_name": "Abhishek Kumar",
-  "title": "Data Science Professional",
+  "title": "Data Scientist | Machine Learning | Analytics",
   "phone": "(+91) 7888873321",
   "email": "abhishek.k.jalandhar@gmail.com",
   "photo": "/static/portfolio_app/images/profile.jpg",
   "links": {
     "linkedin": "https://www.linkedin.com/in/abhipy/",
-    "github": "https://github.com/Abhi-VIT"
+    "github": "https://github.com/Abhi-VIT",
+    "leetcode": "https://leetcode.com/u/ft31DEgRSt/"
   },
-  "summary": "Passionate Data Science student with expertise in analytics and predictive model building. Technical proficiency in Python, R, SQL, and machine learning libraries including sci-kit-learn, TensorFlow, PyTorch, and Keras. Experienced in data interpretation and problem-solving with a strong ability to adapt to new environments and work effectively in teams.",
+  "summary": "Data Science postgraduate with hands-on experience in machine learning, deep learning, data cleaning, feature engineering, cloud integration, deployment, and model monitoring. Strong foundation in statistics, predictive modeling, and problem-solving with proven ability to build scalable, user-centric data solutions.",
   "education": [
     {
       "school": "Vellore Institute of Technology - AP",
-      "degree": "Masters in Data Science",
+      "degree": "M.Sc. Data Science",
       "start_year": "2024",
       "end_year": "2026",
-      "details": "CGPA: 8.48, Focus areas: data preprocessing, statistical analysis, machine learning, deep learning",
+      "details": "CGPA: 8.65 · Machine Learning, Deep Learning, Data Mining, Cloud Computing, Statistical Modeling, Advanced Analytics, Big Data Processing",
       "location": "Amaravati, India"
     },
     {
       "school": "Babasaheb Bhimrao Ambedkar Bihar University",
-      "degree": "Bachelor in Mathematics",
+      "degree": "B.Sc. Mathematics",
       "start_year": "2020",
       "end_year": "2023",
       "location": "Muzaffarpur, India"
     }
   ],
   "skills": [
-    {"name": "Python", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"},
-    {"name": "R Programming", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rstudio/rstudio-original.svg"},
-    {"name": "SQL", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"},
-    {"name": "Machine Learning", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"},
-    {"name": "Deep Learning", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"},
-    {"name": "TensorFlow", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"},
-    {"name": "PyTorch", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"},
-    {"name": "Tableau", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"},
-    {"name": "PowerBI", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"},
-    {"name": "Git", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"},
-    {"name": "MongoDB", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"},
-    {"name": "Neo4j", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neo4j/neo4j-original.svg"},
-    {"name": "Web Development", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"},
-    {"name": "Statistics", "level": "Advanced", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"},
-    {"name": "Matlab", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg"},
-    {"name": "Java", "level": "Intermediate", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"}
+    {"name": "Python", "level": "Advanced", "logo": "/static/portfolio_app/images/skills/python.png"},
+    {"name": "R Programming", "level": "Advanced", "logo": "/static/portfolio_app/images/skills/r.png"},
+    {"name": "SQL", "level": "Advanced", "logo": "/static/portfolio_app/images/skills/mysql.png"},
+    {"name": "Machine Learning", "level": "Advanced", "logo": "/static/portfolio_app/images/skills/scikitlearn.png"},
+    {"name": "Deep Learning", "level": "Advanced", "logo": "/static/portfolio_app/images/skills/keras.png"},
+    {"name": "TensorFlow", "level": "Advanced", "logo": "/static/portfolio_app/images/skills/tensorflow.png"},
+    {"name": "PyTorch", "level": "Advanced", "logo": "/static/portfolio_app/images/skills/pytorch.png"},
+    {"name": "Tableau", "level": "Intermediate", "logo": "/static/portfolio_app/images/skills/tableau.png"},
+    {"name": "PowerBI", "level": "Intermediate", "logo": "/static/portfolio_app/images/skills/powerbi.png"},
+    {"name": "Git", "level": "Intermediate", "logo": "/static/portfolio_app/images/skills/git.png"},
+    {"name": "MongoDB", "level": "Intermediate", "logo": "/static/portfolio_app/images/skills/mongodb.png"},
+    {"name": "Neo4j", "level": "Intermediate", "logo": "/static/portfolio_app/images/skills/neo4j.png"},
+    {"name": "Web Development", "level": "Intermediate", "logo": "/static/portfolio_app/images/skills/html5.png"},
+    {"name": "Statistics", "level": "Advanced", "logo": "/static/portfolio_app/images/skills/numpy.png"},
+    {"name": "Matlab", "level": "Intermediate", "logo": "/static/portfolio_app/images/skills/matlab.png"},
+    {"name": "Java", "level": "Intermediate", "logo": "/static/portfolio_app/images/skills/java.png"}
   ],
   "projects": [
     {
@@ -68,16 +69,16 @@
       "animation_logo": "portfolio_app/images/project_logos/boss.gif"
     },
     {
-      "title": "Stock Price Prediction",
-      "description": "Stock price prediction model using Linear regression in machine learning.",
-      "year": "2023",
-      "tech": "Python, Linear Regression, Yahoo Finance, Sklearn",
-      "link": "https://colab.research.google.com/drive/1uUFgjaVV1WcvrtRuEUFCS4r--dzVZRNX?usp=sharing",
+      "title": "AI E-Learning Chatbot",
+      "description": "An interactive learning assistant that delivers helpful responses for student queries through voice and Wikipedia-powered knowledge retrieval.",
+      "year": "2021",
+      "tech": "Python, pyttsx3, Wikipedia API",
+      "link": "https://github.com/Abhi-VIT",
       "animation_logo": "portfolio_app/images/project_logos/stock-price.gif"
     },
     {
-      "title": "Stock Analysis and Comparison Tool",
-      "description": "Website for stock price analysis and comparison between two stocks.",
+      "title": "Stock Comparison Web App",
+      "description": "A Streamlit web app that gathers market data, compares stock prices, and turns trends into clear, interactive visualizations.",
       "year": "2024",
       "tech": "Python, BeautifulSoup, yfinance, Streamlit",
       "link": "https://github.com/Abhi-VIT/Capstone-Project-Stock-Comparision",
@@ -120,16 +121,22 @@
       "issuer": "Tata Consultancy Services",
       "year": "2024",
       "link": "https://drive.google.com/file/d/1qhhzaE7fTk2wl4B2yFatJJWydR6zTMT2/view"
+    },
+    {
+      "title": "Remote Sensing & GIS",
+      "issuer": "ISRO",
+      "year": "",
+      "link": ""
     }
   ],
   "experience": [
     {
-      "title": "Insurance Agent",
-      "company": "Life Insurance Corporation of India",
-      "location": "Bettiah, India",
-      "start_date": "2023-10-04",
-      "end_date": "Current",
-      "description": "Lead insurance presentations and community building, collaborative reviewing of insurance policies, and presented policies for education and women's benefits."
+      "title": "AI-Powered Data Insights Intern",
+      "company": "TOEHO AI",
+      "location": "Remote",
+      "start_date": "2026-01",
+      "end_date": "Present",
+      "description": "Extracting data from social media and news websites, testing analytics software, resolving issues, and building dashboards from the extracted data."
     }
   ],
   "languages": [
@@ -142,8 +149,8 @@
       "title": "Investigating the Synergistic Effects of Learning Rate, Optimizer, and Activation Function on Convolutional Neural Network Training",
       "conference": "IEEE 5th International Conference on Artificial Intelligence and Signal Processing",
       "year": "2025",
-      "abstract": "This research presents a comprehensive analysis of various training techniques for Convolutional Neural Networks (CNNs) in image classification. The study compares different optimization algorithms, learning rate schedules, and data augmentation strategies to identify the most effective combination for improving model accuracy and reducing training time.",
-      "paper_link": "https://ieeexplore.ieee.org/",
+      "abstract": "Compared activation functions and optimizers with dynamic learning-rate tuning to study their synergistic effect on convolutional neural network training.",
+      "paper_link": "https://ieeexplore.ieee.org/document/11396244",
       "code_link": "https://github.com/Abhi-VIT",
       "impact_factor": "2.8",
       "technologies": "PyTorch, TensorFlow, OpenCV, NumPy, Scikit-learn"
